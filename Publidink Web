@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publidink | Agència de Comunicació i Màrqueting · Barcelona</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --yellow: #FFD600;
+  --yellow-dark: #E6C000;
+  --blue: #0D2562;
+  --blue-light: #1A3A8A;
+  --blue-mid: #163076;
+  --dark: #0A0A0A;
+  --white: #FFFFFF;
+  --offwhite: #F8F7F2;
+  --gray: #EBEBEB;
+  --text: #1A1A1A;
+  --text-muted: #666;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); overflow-x: hidden; background: var(--white); }
+
+
+/* ——— NAVIGATION ——— */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 68px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 4px;
+}
+.nav-logo em { color: var(--yellow); font-style: normal; }
+.nav-links { display: flex; gap: 8px; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--yellow);
+  background: rgba(255,214,0,0.1);
+}
+.nav-cta {
+  background: var(--yellow) !important;
+  color: var(--blue) !important;
+  font-weight: 700 !important;
+  border-radius: 3px;
+}
+.nav-cta:hover { background: var(--white) !important; }
+
+/* ——— HERO ——— */
+#hero {
+  background: var(--blue);
+  min-height: calc(100vh - 68px - 41px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.hero-left {
+  padding: 80px 60px 80px 80px;
+  position: relative;
+  z-index: 2;
+}
+.hero-pill {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--blue);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  margin-bottom: 28px;
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 10vw, 150px);
+  line-height: 0.88;
+  color: var(--white);
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+}
+.hero-title .accent { color: var(--yellow); display: block; }
+.hero-subtitle {
+  font-size: 17px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 44px;
+}
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--yellow);
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: var(--white); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.25);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+.hero-right {
+  position: relative;
+  height: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+.hero-logo-big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 12vw, 200px);
+  color: rgba(255,255,255,0.04);
+  letter-spacing: -5px;
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
+.hero-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 2;
+}
+.hero-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 28px 24px;
+  transition: all 0.3s;
+  cursor: default;
+}
+.hero-card:hover { background: rgba(255,214,0,0.1); border-color: var(--yellow); }
+.hero-card i { font-size: 28px; color: var(--yellow); margin-bottom: 12px; display: block; }
+.hero-card h3 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.hero-card p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+.hero-scrolldown {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.3);
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s;
+  animation: bounce 2s infinite;
+}
+.hero-scrolldown:hover { color: var(--yellow); }
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ——— SECTIONS COMMON ——— */
+section { padding: 100px 80px; }
+.s-label {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  margin-bottom: 18px;
+}
+.s-label-dark { background: var(--blue); color: var(--yellow); }
+.s-label-yellow { background: var(--yellow); color: var(--blue); }
+.s-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 7vw, 90px);
+  letter-spacing: 2px;
+  line-height: 0.95;
+  margin-bottom: 16px;
+}
+.s-line { width: 56px; height: 4px; background: var(--yellow); margin-bottom: 50px; }
+.s-line-blue { background: var(--blue); }
+
+/* ——— QUI SOM ——— */
+#qui-som { background: var(--offwhite); }
+.qui-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.qui-text .lead {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+.qui-text p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.qui-colors {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.color-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.color-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.team-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+.team-list { display: flex; flex-direction: column; gap: 14px; }
+.team-card {
+  background: var(--white);
+  border-left: 4px solid var(--yellow);
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.25s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.team-card:hover { transform: translateX(6px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.team-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--yellow);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 1px;
+}
+.team-info .role {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--blue);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.team-info .name { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.team-info .desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+/* ——— PRODUCTES ——— */
+#productes { background: var(--dark); }
+#productes .s-title { color: var(--white); }
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.prod-ref {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #444;
+  text-transform: uppercase;
+}
+.prod-card {
+  background: #141414;
+  border: 1px solid #222;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: default;
+}
+.prod-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.prod-card:hover::after { transform: scaleX(1); }
+.prod-card:hover { border-color: #333; transform: translateY(-6px); background: #181818; }
+.prod-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+  color: #222;
+  line-height: 1;
+  margin-bottom: -10px;
+  transition: color 0.3s;
+}
+.prod-card:hover .prod-num { color: rgba(255,214,0,0.1); }
+.prod-icon { font-size: 30px; color: var(--yellow); margin-bottom: 16px; }
+.prod-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.prod-card p { font-size: 13px; color: #777; line-height: 1.7; }
+.prod-price {
+  display: inline-block;
+  margin-top: 18px;
+  background: var(--yellow);
+  color: var(--blue);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+}
+
+/* ——— GALERIA ——— */
+#galeria { background: var(--white); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 230px 230px;
+  gap: 10px;
+}
+.g-item {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.g-item:first-child { grid-column: span 2; grid-row: span 2; }
+.g-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+.g-item:hover img { transform: scale(1.06); }
+.g-overlay {
+  position: absolute; inset: 0;
+  background: rgba(13,37,98,0.72);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.g-item:hover .g-overlay { opacity: 1; }
+.g-overlay i { font-size: 28px; color: var(--yellow); }
+.lightbox {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.96);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 88vw; max-height: 80vh; object-fit: contain; }
+.lb-close {
+  position: absolute; top: 24px; right: 36px;
+  font-size: 40px; color: var(--white); cursor: pointer;
+  background: none; border: none; line-height: 1;
+  transition: color 0.2s;
+}
+.lb-close:hover { color: var(--yellow); }
+.video-section {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.video-label { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+.video-title { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 2px; color: var(--text); margin-bottom: 16px; line-height: 1; }
+.video-text { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+.video-wrapper { position: relative; width: 100%; aspect-ratio: 16/9; }
+.video-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+/* ——— PROMOCIONS ——— */
+#promocions { background: var(--yellow); padding-bottom: 120px; }
+#promocions .s-title { color: var(--blue); }
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.promo-card {
+  background: var(--blue);
+  padding: 44px 32px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.promo-card:hover { transform: translateY(-6px); }
+.promo-badge {
+  position: absolute; top: 20px; right: -28px;
+  background: var(--yellow); color: var(--blue);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px; letter-spacing: 2px;
+  padding: 6px 48px 6px 16px;
+}
+.promo-disc {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px; line-height: 1;
+  color: var(--yellow); margin-bottom: 8px;
+}
+.promo-card h3 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+.promo-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.promo-cta {
+  display: inline-block; margin-top: 20px;
+  background: var(--yellow); color: var(--blue);
+  font-weight: 700; font-size: 11px; letter-spacing: 2.5px;
+  text-transform: uppercase; text-decoration: none;
+  padding: 10px 20px; transition: all 0.2s;
+}
+.promo-cta:hover { background: var(--white); }
+
+/* ——— LOCALITZACIÓ ——— */
+#localitzacio { background: var(--offwhite); }
+.loc-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.loc-title { font-family: 'Bebas Neue', sans-serif; font-size: 30px; letter-spacing: 2px; color: var(--blue); margin-bottom: 28px; }
+.info-row {
+  display: flex; align-items: flex-start; gap: 14px;
+  margin-bottom: 20px;
+}
+.info-icon {
+  width: 42px; height: 42px; background: var(--blue); color: var(--yellow);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; flex-shrink: 0;
+}
+.info-label { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+.info-val { font-size: 15px; color: var(--text); line-height: 1.5; }
+.info-val a { color: inherit; text-decoration: none; }
+.info-val a:hover { color: var(--blue); text-decoration: underline; }
+.hours-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; margin-top: 12px;
+}
+.hour-row {
+  background: var(--white); padding: 10px 14px;
+  font-size: 12px; border-left: 3px solid var(--yellow);
+}
+.hour-row strong { display: block; font-size: 10px; font-family: 'Space Mono', monospace; letter-spacing: 1px; color: var(--blue); margin-bottom: 3px; }
+.map-frame {
+  width: 100%; height: 460px;
+  border: 4px solid var(--blue);
+  display: block;
+}
+
+/* ——— CONTACTE ——— */
+#contacte { background: var(--blue); }
+#contacte .s-title { color: var(--white); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.form-group label {
+  font-family: 'Space Mono', monospace; font-size: 9px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--yellow);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  padding: 14px 16px;
+  font-family: 'DM Sans', sans-serif; font-size: 14px;
+  outline: none; transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--yellow); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-group select option { background: var(--blue); color: var(--white); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.btn-send {
+  background: var(--yellow); color: var(--blue); border: none;
+  padding: 16px 36px; font-family: 'DM Sans', sans-serif;
+  font-weight: 700; font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 6px;
+}
+.btn-send:hover { background: var(--white); transform: translateY(-2px); }
+.contact-right h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px; letter-spacing: 2px; color: var(--white); margin-bottom: 16px;
+}
+.contact-right p { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 32px; }
+.social-block { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+.soc-btn {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 20px; text-decoration: none; font-weight: 600;
+  font-size: 14px; transition: all 0.2s; border-radius: 3px;
+}
+.soc-btn i { font-size: 22px; }
+.soc-btn.instagram {
+  background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+  color: #fff;
+}
+.soc-btn.web { background: var(--yellow); color: var(--blue); }
+.soc-btn:hover { transform: translateX(8px); }
+.contact-legal {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+
+/* ——— FOOTER ——— */
+footer {
+  background: var(--dark);
+  padding: 40px 80px;
+  border-top: 3px solid var(--yellow);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px; color: var(--yellow); letter-spacing: 5px;
+}
+.footer-logo span { color: rgba(255,255,255,0.3); }
+.footer-center { text-align: center; }
+.footer-center p {
+  font-family: 'Space Mono', monospace; font-size: 10px;
+  color: #444; letter-spacing: 1px; margin-bottom: 5px;
+}
+.footer-center a { color: var(--yellow); text-decoration: none; }
+.footer-warning {
+  display: inline-block; margin-top: 12px;
+  background: rgba(255,214,0,0.08);
+  border: 1px solid rgba(255,214,0,0.2);
+  color: var(--yellow);
+  font-family: 'Space Mono', monospace;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 6px 14px;
+}
+.footer-right { text-align: right; }
+.footer-right p {
+  font-family: 'Space Mono', monospace; font-size: 10px;
+  color: #333; letter-spacing: 1px; margin-bottom: 4px;
+}
+.footer-right .subdomain { color: rgba(255,214,0,0.4); }
+
+/* ——— SCROLL ANIMATIONS ——— */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ——— DISCOUNT STRIPS ——— */
+.disc-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.disc-card {
+  background: rgba(13,37,98,0.12);
+  border: 2px solid var(--blue);
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.disc-pct {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.disc-info strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.disc-info span { font-size: 12px; color: #555; line-height: 1.5; }
+
+/* ——— RESPONSIVE ——— */
+@media (max-width: 1024px) {
+  section { padding: 70px 40px; }
+  nav { padding: 0 30px; }
+  #hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { display: none; }
+  .hero-left { padding: 70px 40px; }
+  .qui-grid, .loc-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .prod-grid { grid-template-columns: 1fr 1fr; }
+  .promo-grid { grid-template-columns: 1fr; }
+  .loc-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .g-item:first-child { grid-column: span 2; }
+  footer { grid-template-columns: 1fr; text-align: center; }
+  .footer-right { text-align: center; }
+  .video-section { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  section { padding: 60px 24px; }
+  .prod-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════ NAVIGATION ═══════ -->
+<nav>
+  <a href="#hero" class="nav-logo" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <svg width="38" height="38" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+      <rect width="42" height="42" rx="8" fill="#FFD600"/>
+      <rect x="10" y="8" width="6" height="26" rx="3" fill="#0D2562"/>
+      <path d="M16 8 Q30 8 30 18 Q30 28 16 28" fill="none" stroke="#0D2562" stroke-width="6" stroke-linecap="round"/>
+      <path d="M32 11 Q37 18 32 25" fill="none" stroke="#0D2562" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M35 8 Q42 18 35 28" fill="none" stroke="#0D2562" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+    </svg>
+    <span style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:4px;">PUBLIDINK</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#qui-som">Qui Som</a></li>
+    <li><a href="#productes">Productes</a></li>
+    <li><a href="#promocions">Promocions</a></li>
+    <li><a href="#localitzacio">Localització</a></li>
+    <li><a href="#contacte" class="nav-cta">Contacte</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-pill">Agència de Comunicació · Barcelona</div>
+    <h1 class="hero-title">
+      PUBLI<span class="accent">DINK</span>
+    </h1>
+    <p class="hero-subtitle">
+      Fem arribar el teu missatge allà on necessites. Disseny creatiu, impressió de qualitat i estratègia de màrqueting per a les teves marques i negocis.
+    </p>
+    <div class="hero-btns">
+      <a href="#productes" class="btn-primary">Els nostres serveis <i class="fas fa-arrow-right"></i></a>
+      <a href="#contacte" class="btn-outline">Contacta'ns</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-logo-big">INK</div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <i class="fas fa-print"></i>
+        <h3>Impressió</h3>
+        <p>Alta qualitat en cada peça</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-palette"></i>
+        <h3>Disseny</h3>
+        <p>Creativitat i innovació</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Publicitat</h3>
+        <p>Màxima visibilitat</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-globe"></i>
+        <h3>Digital</h3>
+        <p>Presència a Internet</p>
+      </div>
+    </div>
+  </div>
+  <a href="#qui-som" class="hero-scrolldown">
+    <i class="fas fa-chevron-down"></i>
+    Descobreix
+  </a>
+</section>
+
+<!-- ═══════ QUI SOM ═══════ -->
+<section id="qui-som">
+  <span class="s-label s-label-dark">01 — Qui Som</span>
+  <h2 class="s-title">La nostra<br>empresa</h2>
+  <div class="s-line"></div>
+  <div class="qui-grid">
+    <div class="qui-text reveal">
+      <p class="lead">Publidink és una agència de comunicació i màrqueting nascuda a Barcelona amb l'objectiu de donar visibilitat a les marques dels nostres clients.</p>
+      <p>El nostre nom transmet creativitat, innovació i proximitat. Modern, curt i directament relacionat amb el món del màrqueting i la comunicació visual.</p>
+      <p>El nostre símbol representa comunicació i difusió: reflecteix la nostra missió de fer arribar missatges i donar visibilitat a les marques. Creiem en el poder de la imatge i la paraula ben combinades.</p>
+      <p>Treballem per a petites i mitjanes empreses, emprenedors i particulars que volen destacar en un mercat cada vegada més competitiu. La nostra proposta de valor és clara: qualitat, creativitat i preus assequibles.</p>
+      <div class="qui-colors">
+        <div class="color-chip">
+          <div class="color-dot" style="background:#FFD600; border:2px solid #ddd;"></div>
+          <span><strong>Groc</strong> — energia i creativitat</span>
+        </div>
+        <div class="color-chip">
+          <div class="color-dot" style="background:#0D2562;"></div>
+          <span><strong>Blau</strong> — confiança i professionalitat</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:0.15s">
+      <div class="team-title">El nostre equip</div>
+      <div class="team-list">
+        <div class="team-card">
+          <div class="team-avatar">VA</div>
+          <div class="team-info">
+            <div class="role">Cap de Comunicació</div>
+            <div class="name">Victor Alvarez</div>
+            <div class="desc">Responsable de comunicar-se amb el professorat i transmetre la informació al grup.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">DS</div>
+          <div class="team-info">
+            <div class="role">Cap de Personal</div>
+            <div class="name">Diego Sanchez</div>
+            <div class="desc">Responsable de controlar l'assistència i la participació dels membres del grup.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">PV</div>
+          <div class="team-info">
+            <div class="role">Cap de Producció</div>
+            <div class="name">Pol Villar</div>
+            <div class="desc">Responsable de recopilar els documents i assegurar les entregues en el termini establert.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">JM</div>
+          <div class="team-info">
+            <div class="role">Coordinadora</div>
+            <div class="name">Judith Moreno</div>
+            <div class="desc">Responsable d'organitzar les tasques, repartir el treball i supervisar el funcionament del grup.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PRODUCTES ═══════ -->
+<section id="productes">
+  <span class="s-label s-label-yellow">02 — Productes i Serveis</span>
+  <h2 class="s-title" style="color:var(--white)">El que<br>oferim</h2>
+  <div class="s-line"></div>
+  <div class="prod-grid">
+    <div class="prod-card reveal">
+      <div class="prod-num">01</div>
+      <div class="prod-icon"><i class="fas fa-chess"></i></div>
+      <h3>Estratègia de Màrqueting</h3>
+      <p>Anàlisi de mercat, identificació del públic objectiu i posicionament de marca. Objectius alineats amb el teu negoci.</p>
+      <span class="prod-price">550€ (pagament únic)</span>
+      <div class="prod-ref">REF: SMS-001</div>
+    </div>
+    <div class="prod-card reveal" style="transition-delay:0.07s">
+      <div class="prod-num">02</div>
+      <div class="prod-icon"><i class="fas fa-search"></i></div>
+      <h3>Màrqueting Digital</h3>
+      <p>SEO per a posicionament orgànic i SEM per a campanyes de pagament. Inclou publicitat a xarxes i email marketing.</p>
+      <span class="prod-price">SEO 400€ · SEM 450€</span>
+      <div class="prod-ref">REF: DMS-001</div>
+    </div>
+    <div class="prod-card reveal" style="transition-delay:0.14s">
+      <div class="prod-num">03</div>
+      <div class="prod-icon"><i class="fas fa-hashtag"></i></div>
+      <h3>Gestió Xarxes Socials</h3>
+      <p>Planificació de continguts, publicació regular i interacció amb usuaris per construir una comunitat activa al voltant de la marca.</p>
+      <span class="prod-price">Basic 150€ · Std 400€ · Premium 600€</span>
+      <div class="prod-ref">REF: SMMS-001</div>
+    </div>
+    <div class="prod-card reveal" style="transition-delay:0.21s">
+      <div class="prod-num">04</div>
+      <div class="prod-icon"><i class="fas fa-paint-brush"></i></div>
+      <h3>Disseny i Branding</h3>
+      <p>Identitat visual coherent i professional: logotip, colors, tipografies i manual de marca per fer-te reconeixible.</p>
+      <span class="prod-price">Logo 250€ · Identitat 600€</span>
+      <div class="prod-ref">REF: DBS-001</div>
+    </div>
+    <div class="prod-card reveal" style="transition-delay:0.28s">
+      <div class="prod-num">05</div>
+      <div class="prod-icon"><i class="fas fa-code"></i></div>
+      <h3>Desenvolupament Web</h3>
+      <p>Webs funcionals, atractives i fàcils d'usar que transmeten professionalitat i converteixen visitants en clients.</p>
+      <span class="prod-price">Basic 600€ · Prof. 1.000€ · E-com 2.500€</span>
+      <div class="prod-ref">REF: WDS-001</div>
+    </div>
+    <div class="prod-card reveal" style="transition-delay:0.35s">
+      <div class="prod-num">06</div>
+      <div class="prod-icon"><i class="fas fa-pen-nib"></i></div>
+      <h3>Creació de Contingut</h3>
+      <p>Articles, blog, vídeos i formats que informen, eduquen i fidelitzen. Essencial per comunicar el valor de la teva marca.</p>
+      <span class="prod-price">Articles 80€ · Pack mensual 350€ · Vídeo 300€</span>
+      <div class="prod-ref">REF: CCS-001</div>
+    </div>
+    <div class="prod-card reveal" style="transition-delay:0.42s">
+      <div class="prod-num">07</div>
+      <div class="prod-icon"><i class="fas fa-robot"></i></div>
+      <h3>Automatització Màrqueting</h3>
+      <p>Embuts de vendes, enviament automatitzat d'emails i sistemes CRM per gestionar contactes i acompanyar el client.</p>
+      <span class="prod-price">Instal·lació 250€ · Gestió mensual 250€</span>
+      <div class="prod-ref">REF: MAS-001</div>
+    </div>
+    <div class="prod-card reveal" style="transition-delay:0.49s">
+      <div class="prod-num">08</div>
+      <div class="prod-icon"><i class="fas fa-star"></i></div>
+      <h3>RRPP i Reputació Online</h3>
+      <p>Gestió de ressenyes, col·laboració amb influencers i comunicació estratègica per reforçar la confiança i imatge de marca.</p>
+      <span class="prod-price">Reputació 300€ · Influencers 550€</span>
+      <div class="prod-ref">REF: PRORS-001</div>
+    </div>
+  </div>
+  <p style="margin-top:28px; font-family:'Space Mono',monospace; font-size:10px; color:#555; letter-spacing:1px;">* Els preus no inclouen IVA</p>
+</section>
+
+
+<!-- ═══════ VÍDEO ═══════ -->
+
+<!-- ═══════ PROMOCIONS ═══════ -->
+<section id="promocions">
+  <span class="s-label s-label-yellow" style="background:var(--blue);color:var(--yellow)">04 — Promocions</span>
+  <h2 class="s-title">Ofertes<br>especials</h2>
+  <div class="s-line s-line-blue"></div>
+  <div class="promo-grid">
+    <div class="promo-card reveal">
+      <div class="promo-badge">PACK</div>
+      <div class="promo-disc">-15%</div>
+      <h3>Start Pack</h3>
+      <p>Estratègia de màrqueting + Logotip + Web bàsica. Tot el que necessites per llançar el teu negoci amb un 15% de descompte sobre el preu individual.</p>
+      <a href="#contacte" class="promo-cta">Sol·licitar ara</a>
+    </div>
+    <div class="promo-card reveal" style="transition-delay:0.12s">
+      <div class="promo-badge">PACK</div>
+      <div class="promo-disc">-10%</div>
+      <h3>Growth Pack</h3>
+      <p>SEO + Gestió de xarxes socials + Creació de contingut. Fes créixer la teva presència digital amb un 10% de descompte.</p>
+      <a href="#contacte" class="promo-cta">Sol·licitar ara</a>
+    </div>
+    <div class="promo-card reveal" style="transition-delay:0.24s">
+      <div class="promo-badge">PREMIUM</div>
+      <div class="promo-disc">-20%</div>
+      <h3>Premium Pack</h3>
+      <p>Desenvolupament web + Branding complet + Gestió de xarxes socials. La solució integral amb el millor descompte: 20% sobre el preu de catàleg.</p>
+      <a href="#contacte" class="promo-cta">Sol·licitar ara</a>
+    </div>
+  </div>
+
+  <!-- Descomptes per volum -->
+  <div style="margin-top:52px;">
+    <div style="font-family:'Space Mono',monospace; font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--blue); margin-bottom:16px; background:var(--blue); color:var(--yellow); display:inline-block; padding:5px 12px;">Descomptes per volum</div>
+    <div class="disc-strip">
+      <div class="disc-card reveal">
+        <div class="disc-pct">10%</div>
+        <div class="disc-info">
+          <strong>Primera comanda</strong>
+          <span>10% de descompte en el teu primer encàrrec. Vàlid per a tots els serveis del catàleg.</span>
+        </div>
+      </div>
+      <div class="disc-card reveal" style="transition-delay:0.1s">
+        <div class="disc-pct">10%</div>
+        <div class="disc-info">
+          <strong>Comanda superior a 1.000€</strong>
+          <span>Per a compres de més de 1.000€ en una sola transacció s'aplica un descompte del 10%.</span>
+        </div>
+      </div>
+      <div class="disc-card reveal" style="transition-delay:0.2s">
+        <div class="disc-pct">20%</div>
+        <div class="disc-info">
+          <strong>+15 ítems en factura</strong>
+          <span>Si contractes més de 15 serveis en una sola factura reps un descompte del 20%.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ LOCALITZACIÓ ═══════ -->
+<section id="localitzacio">
+  <span class="s-label s-label-dark">05 — Localització</span>
+  <h2 class="s-title">On<br>som?</h2>
+  <div class="s-line"></div>
+  <div class="loc-grid">
+    <div class="reveal">
+      <div class="loc-title">Troba'ns a Barcelona</div>
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="info-label">Adreça</div>
+          <div class="info-val">Carrer de l'Escull, 2<br>08034 Barcelona, Catalunya</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <div class="info-label">Telèfon gratuït</div>
+          <div class="info-val"><a href="tel:900333424">900 333 424</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-val"><a href="mailto:publidink.6@gmail.com">publidink.6@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <div class="info-label">Horari d'atenció</div>
+          <div class="hours-grid">
+            <div class="hour-row"><strong>Dill – Div</strong>9:00 – 18:00h</div>
+            <div class="hour-row"><strong>Dissabte</strong>10:00 – 14:00h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:0.15s">
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.385!2d2.1241!3d41.3905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4987b9c2e4ef3%3A0x1!2sCarrer+de+l'Escull%2C+2%2C+08034+Barcelona!5e0!3m2!1sca!2ses!4v1699999999999!5m2!1sca!2ses"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa Publidink — Carrer de l'Escull, 2, Barcelona">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CONTACTE ═══════ -->
+<section id="contacte">
+  <span class="s-label s-label-yellow">06 — Contacte</span>
+  <h2 class="s-title">Parlem?</h2>
+  <div class="s-line"></div>
+  <div class="contact-grid">
+    <form class="reveal" onsubmit="sendForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" placeholder="El teu nom" required>
+        </div>
+        <div class="form-group">
+          <label>Cognoms</label>
+          <input type="text" placeholder="Els teus cognoms" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="email@empresa.com" required>
+        </div>
+        <div class="form-group">
+          <label>Telèfon</label>
+          <input type="tel" placeholder="6XX XXX XXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Servei d'interès</label>
+        <select>
+          <option value="">Selecciona un servei…</option>
+          <option>Impressió Digital</option>
+          <option>Disseny Gràfic</option>
+          <option>Publicitat Exterior</option>
+          <option>Presència Digital</option>
+          <option>Material Promocional</option>
+          <option>Fotografia i Vídeo</option>
+          <option>Pack Empresa Nova</option>
+          <option>Altra consulta</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Missatge</label>
+        <textarea placeholder="Explica'ns el teu projecte o consulta…" required></textarea>
+      </div>
+      <button type="submit" class="btn-send">
+        Enviar missatge <i class="fas fa-paper-plane"></i>
+      </button>
+    </form>
+
+    <div class="reveal" style="transition-delay:0.15s">
+      <h3>Xarxes socials</h3>
+      <p>Segueix-nos a les xarxes per estar al dia de totes les nostres novetats, treballs recents i promocions exclusives per a seguidors.</p>
+      <div class="social-block">
+        <a href="https://www.instagram.com/publidink.oficial?igsh=bGFheG94bm1nNHJ6&utm_source=qr"
+           target="_blank" class="soc-btn instagram">
+          <i class="fab fa-instagram"></i>
+          @publidink.oficial
+        </a>
+
+      </div>
+      <div class="contact-legal">
+        <p>Raó social: Publidink · NIF: B72548659</p>
+        <p>Carrer de l'Escull, 2 · 08034 Barcelona</p>
+        <p>Entitat bancària: Banco Santander</p>
+        <p>TGSS: 08172392541</p>
+        <p style="margin-top:10px; color: rgba(255,214,0,0.3)">
+          Subdomini pràctiques: publidink-VA.sites.cat
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <svg width="46" height="46" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+      <rect width="42" height="42" rx="8" fill="#FFD600"/>
+      <rect x="10" y="8" width="6" height="26" rx="3" fill="#0D2562"/>
+      <path d="M16 8 Q30 8 30 18 Q30 28 16 28" fill="none" stroke="#0D2562" stroke-width="6" stroke-linecap="round"/>
+      <path d="M32 11 Q37 18 32 25" fill="none" stroke="#0D2562" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M35 8 Q42 18 35 28" fill="none" stroke="#0D2562" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+    </svg>
+    <div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:#FFD600;letter-spacing:5px;line-height:1;">PUBLIDINK</div>
+      <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;">Agencia de Marketing &amp; Publicidad</div>
+    </div>
+  </div>
+  <div class="footer-center">
+    <p>© 2026 Publidink · NIF B72548659 · Carrer de l'Escull, 2 · 08034 Barcelona</p>
+    <p>Tel: <a href="tel:900333424">900 333 424</a> · Email: <a href="mailto:publidink.6@gmail.com">publidink.6@gmail.com</a></p>
+  </div>
+  <div class="footer-right">
+    <p class="subdomain">publidink-VA.sites.cat</p>
+    <p>Dissenyat per Victor Alvarez</p>
+    <p>Curs 2025–2026</p>
+  </div>
+</footer>
+
+<!-- ═══════ JAVASCRIPT ═══════ -->
+<script>
+/* Lightbox */
+function openLb(el) {
+  document.getElementById('lb-img').src = el.querySelector('img').src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb(e) {
+  if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lb-close')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+/* Form */
+function sendForm(e) {
+  e.preventDefault();
+  alert('✅ Missatge enviat correctament!\n\nEns posarem en contacte amb tu en menys de 24 hores. Gràcies per confiar en Publidink!');
+  e.target.reset();
+}
+
+/* Scroll reveal */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add('visible'); observer.unobserve(en.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* Active nav */
+const secs = [...document.querySelectorAll('section[id]')];
+const navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 100;
+  let cur = '';
+  secs.forEach(s => { if (y >= s.offsetTop) cur = s.id; });
+  navAs.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur && !a.classList.contains('nav-cta'));
+  });
+});
+</script>
+</body>
+</html>
