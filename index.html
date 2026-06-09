@@ -25,6 +25,21 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body { font-family: 'DM Sans', sans-serif; color: var(--text); overflow-x: hidden; background: var(--white); }
 
 
+/* ── PRACTICE BANNER ── */
+.practice-banner {
+  background: var(--dark);
+  color: var(--yellow);
+  text-align: center;
+  padding: 7px 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1001;
+}
+.practice-banner a { color: var(--yellow); }
+
 /* ——— NAVIGATION ——— */
 nav {
   position: sticky;
@@ -38,14 +53,7 @@ nav {
   height: 68px;
   box-shadow: 0 2px 20px rgba(0,0,0,0.35);
 }
-.nav-logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 34px;
-  color: var(--white);
-  text-decoration: none;
-  letter-spacing: 4px;
-}
-.nav-logo em { color: var(--yellow); font-style: normal; }
+.nav-logo { text-decoration: none; }
 .nav-links { display: flex; gap: 8px; list-style: none; }
 .nav-links a {
   color: rgba(255,255,255,0.75);
@@ -658,6 +666,58 @@ footer {
 }
 .disc-info span { font-size: 12px; color: #555; line-height: 1.5; }
 
+/* ── GALERIA ── */
+#galeria { background: var(--white); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 200px 200px;
+  gap: 10px;
+  margin-top: 50px;
+}
+.g-item { overflow:hidden; position:relative; cursor:pointer; }
+.g-item:first-child { grid-column:span 2; grid-row:span 2; }
+.g-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s; }
+.g-item:hover img { transform:scale(1.06); }
+.g-overlay {
+  position:absolute; inset:0;
+  background:rgba(13,37,98,0.65);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:8px;
+  opacity:0; transition:opacity 0.3s;
+}
+.g-item:hover .g-overlay { opacity:1; }
+.g-overlay i { font-size:26px; color:var(--yellow); }
+.g-overlay span { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:2px; color:white; text-transform:uppercase; }
+.lightbox {
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,0.95); z-index:9999;
+  align-items:center; justify-content:center; flex-direction:column; gap:14px;
+}
+.lightbox.open { display:flex; }
+.lightbox img { max-width:88vw; max-height:80vh; object-fit:contain; }
+.lb-close { position:absolute; top:24px; right:36px; font-size:40px; color:white; cursor:pointer; background:none; border:none; transition:color 0.2s; }
+.lb-close:hover { color:var(--yellow); }
+.lb-caption { font-family:'Space Mono',monospace; font-size:11px; color:rgba(255,255,255,0.5); letter-spacing:2px; text-transform:uppercase; }
+
+/* ── VÍDEO ── */
+#video { background:var(--offwhite); }
+.video-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-top:50px; }
+.video-placeholder {
+  position:relative; width:100%; aspect-ratio:16/9;
+  background:var(--blue); border:4px solid var(--yellow);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+}
+.video-placeholder .play-btn {
+  width:70px; height:70px; border-radius:50%;
+  background:var(--yellow); display:flex; align-items:center; justify-content:center;
+}
+.video-placeholder .play-btn i { color:var(--blue); font-size:26px; margin-left:4px; }
+.video-placeholder p { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:3px; color:white; }
+.video-placeholder small { font-family:'Space Mono',monospace; font-size:9px; color:rgba(255,255,255,0.35); letter-spacing:2px; text-transform:uppercase; }
+.video-actual { width:100%; aspect-ratio:16/9; border:4px solid var(--yellow); display:block; }
+.video-info h3 { font-family:'Bebas Neue',sans-serif; font-size:42px; letter-spacing:2px; color:var(--text); line-height:1; margin-bottom:16px; }
+.video-info p { font-size:15px; color:var(--text-muted); line-height:1.8; margin-bottom:20px; }
 /* ——— RESPONSIVE ——— */
 @media (max-width: 1024px) {
   section { padding: 70px 40px; }
@@ -688,6 +748,11 @@ footer {
 <body>
 
 
+<!-- ═══════ PRÀCTIQUES ═══════ -->
+<div class="practice-banner">
+  ⚠ &nbsp; <strong>LLOC WEB DE PRÀCTIQUES</strong> — Cicle Formatiu d'Administració i Finances · Mòdul 5 UF3 · Grup S1AF &nbsp; ⚠
+</div>
+
 <!-- ═══════ NAVIGATION ═══════ -->
 <nav>
   <a href="#hero" class="nav-logo" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
@@ -703,6 +768,8 @@ footer {
   <ul class="nav-links">
     <li><a href="#qui-som">Qui Som</a></li>
     <li><a href="#productes">Productes</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#video">Vídeo</a></li>
     <li><a href="#promocions">Promocions</a></li>
     <li><a href="#localitzacio">Localització</a></li>
     <li><a href="#contacte" class="nav-cta">Contacte</a></li>
@@ -892,11 +959,73 @@ footer {
 </section>
 
 
+
+<!-- ═══════ GALERIA ═══════ -->
+<section id="galeria">
+  <span class="s-label s-label-dark">03 — Galeria de Fotos</span>
+  <h2 class="s-title">El nostre<br>univers</h2>
+  <div class="s-line"></div>
+
+  <div class="gallery-grid">
+    <div class="g-item reveal" onclick="openLb(this,'Estratègia de màrqueting')">
+      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80" alt="Reunió d'estratègia">
+      <div class="g-overlay"><i class="fas fa-expand-alt"></i><span>Estratègia</span></div>
+    </div>
+    <div class="g-item reveal" onclick="openLb(this,'Disseny de marca')">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80" alt="Disseny de marca">
+      <div class="g-overlay"><i class="fas fa-expand-alt"></i><span>Branding</span></div>
+    </div>
+    <div class="g-item reveal" onclick="openLb(this,'Màrqueting digital')">
+      <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=500&q=80" alt="Màrqueting digital">
+      <div class="g-overlay"><i class="fas fa-expand-alt"></i><span>Digital</span></div>
+    </div>
+    <div class="g-item reveal" onclick="openLb(this,'Gestió de xarxes socials')">
+      <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500&q=80" alt="Xarxes socials">
+      <div class="g-overlay"><i class="fas fa-expand-alt"></i><span>Xarxes</span></div>
+    </div>
+    <div class="g-item reveal" onclick="openLb(this,'Anàlisi i resultats')">
+      <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&q=80" alt="Analítica">
+      <div class="g-overlay"><i class="fas fa-expand-alt"></i><span>Analítica</span></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLb(event)">
+    <button class="lb-close" onclick="closeLb()">×</button>
+    <img id="lb-img" src="" alt="">
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+</section>
+
 <!-- ═══════ VÍDEO ═══════ -->
+<section id="video">
+  <span class="s-label s-label-dark">04 — Vídeo Corporatiu</span>
+  <h2 class="s-title">Coneix<br>Publidink</h2>
+  <div class="s-line"></div>
+  <div class="video-grid reveal">
+    <div class="video-info">
+      <h3>Tot el que el teu negoci necessita, en menys d'un minut</h3>
+      <p>Descobreix qui som, quins serveis oferim i per què Publidink és l'opció ideal per a impulsar la teva marca. Des de l'estratègia fins a l'execució.</p>
+      <a href="https://www.instagram.com/publidink.oficial" target="_blank" class="btn-primary" style="font-size:12px;padding:12px 24px;">
+        Segueix-nos a Instagram <i class="fas fa-external-link-alt"></i>
+      </a>
+    </div>
+    <div id="video-container">
+      <video controls class="video-actual" preload="metadata">
+        <source src="Pippit_0608_PublidinkAd.mp4" type="video/mp4">
+        <div class="video-placeholder">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <p>VÍDEO CORPORATIU</p>
+          <small>Pròximament disponible</small>
+        </div>
+      </video>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════ PROMOCIONS ═══════ -->
 <section id="promocions">
-  <span class="s-label s-label-yellow" style="background:var(--blue);color:var(--yellow)">04 — Promocions</span>
+  <span class="s-label s-label-yellow" style="background:var(--blue);color:var(--yellow)">05 — Promocions</span>
   <h2 class="s-title">Ofertes<br>especials</h2>
   <div class="s-line s-line-blue"></div>
   <div class="promo-grid">
@@ -954,7 +1083,7 @@ footer {
 
 <!-- ═══════ LOCALITZACIÓ ═══════ -->
 <section id="localitzacio">
-  <span class="s-label s-label-dark">05 — Localització</span>
+  <span class="s-label s-label-dark">06 — Localització</span>
   <h2 class="s-title">On<br>som?</h2>
   <div class="s-line"></div>
   <div class="loc-grid">
@@ -1007,7 +1136,7 @@ footer {
 
 <!-- ═══════ CONTACTE ═══════ -->
 <section id="contacte">
-  <span class="s-label s-label-yellow">06 — Contacte</span>
+  <span class="s-label s-label-yellow">07 — Contacte</span>
   <h2 class="s-title">Parlem?</h2>
   <div class="s-line"></div>
   <div class="contact-grid">
@@ -1081,35 +1210,24 @@ footer {
 
 <!-- ═══════ FOOTER ═══════ -->
 <footer>
-  <div style="display:flex;align-items:center;gap:12px;">
-    <svg width="46" height="46" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
-      <rect width="42" height="42" rx="8" fill="#FFD600"/>
-      <rect x="10" y="8" width="6" height="26" rx="3" fill="#0D2562"/>
-      <path d="M16 8 Q30 8 30 18 Q30 28 16 28" fill="none" stroke="#0D2562" stroke-width="6" stroke-linecap="round"/>
-      <path d="M32 11 Q37 18 32 25" fill="none" stroke="#0D2562" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M35 8 Q42 18 35 28" fill="none" stroke="#0D2562" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
-    </svg>
-    <div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:#FFD600;letter-spacing:5px;line-height:1;">PUBLIDINK</div>
-      <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;">Agencia de Marketing &amp; Publicidad</div>
-    </div>
-  </div>
+  <div class="footer-logo">PUBLI<span>DINK</span></div>
   <div class="footer-center">
-    <p>© 2026 Publidink · NIF B72548659 · Carrer de l'Escull, 2 · 08034 Barcelona</p>
+    <p>© 2025 Publidink · NIF B72548659 · Carrer de l'Escull, 2 · 08034 Barcelona</p>
     <p>Tel: <a href="tel:900333424">900 333 424</a> · Email: <a href="mailto:publidink.6@gmail.com">publidink.6@gmail.com</a></p>
   </div>
   <div class="footer-right">
     <p class="subdomain">publidink-VA.sites.cat</p>
     <p>Dissenyat per Victor Alvarez</p>
-    <p>Curs 2025–2026</p>
+    <p>Curs 2024–2025</p>
   </div>
 </footer>
 
 <!-- ═══════ JAVASCRIPT ═══════ -->
 <script>
 /* Lightbox */
-function openLb(el) {
+function openLb(el, caption) {
   document.getElementById('lb-img').src = el.querySelector('img').src;
+  document.getElementById('lb-caption').textContent = caption || '';
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
